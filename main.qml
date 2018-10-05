@@ -2,6 +2,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.1
 import QtQuick.Controls.Universal 2.0
+import QtQuick.Layouts 1.3
 
 
 ApplicationWindow {
@@ -10,6 +11,8 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Human Hash Password Generator 2.0")
+
+    Material.theme: Material.Dark
 
 
 
@@ -22,7 +25,8 @@ ApplicationWindow {
         spacing: 15
         anchors.fill: parent
 
-        Text {
+
+        Label {
             id: text1
             text: qsTr("Master phrase")
         }
@@ -35,7 +39,7 @@ ApplicationWindow {
             placeholderText: "enter master phrase"
         }
 
-        Text {
+        Label {
             id: text2
             text: qsTr("Text")
         }
@@ -47,31 +51,36 @@ ApplicationWindow {
             anchors.right: parent.right
         }
 
-        Row {
-            id: row
-            spacing: 10
-            anchors.left: parent.left
+        RowLayout {
+            id: rowLayout
+            height: 100
             anchors.right: parent.right
+            anchors.rightMargin: 0
+            anchors.left: parent.left
+            anchors.leftMargin: 0
 
             Button {
                 id: btnGenerate
                 text: qsTr("Generate")
+                Layout.fillWidth: true
 
             }
-
             Button {
                 id: btnCopy
                 text: qsTr("Copy")
+                Layout.fillWidth: true
 
             }
 
             Button {
                 id: btnGenCopy
                 text: qsTr("Generate and copy")
+                Layout.fillWidth: true
 
             }
 
         }
+
 
     }
 }
