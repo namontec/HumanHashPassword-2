@@ -1,3 +1,5 @@
+TARGET=hhpass
+
 QT += qml quick quickcontrols2
 CONFIG += c++11
 

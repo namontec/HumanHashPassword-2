@@ -10,16 +10,16 @@ ApplicationWindow {
     width: 400
     height: 480
     minimumWidth: 300
-    minimumHeight: mainColumn.height
+    minimumHeight: 300
     title: qsTr("Human Hash Password Generator")
 
-    Material.theme: Material.Dark
+    Material.theme: Material.System
 
 
     Column {
         id: mainColumn
         anchors.margins: 15
-        spacing: 25
+        spacing: 5
         anchors.fill: parent
 
 
