@@ -1,63 +1,56 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.1
-import QtQuick.Controls.Universal 2.0
 import QtQuick.Layouts 1.3
 
 
 ApplicationWindow {
     id: window
     visible: true
-    width: 640
+    width: 400
     height: 480
-    title: qsTr("Human Hash Password Generator 2.0")
+    minimumWidth: 300
+    minimumHeight: mainColumn.height
+    title: qsTr("Human Hash Password Generator")
 
     Material.theme: Material.Dark
 
 
-
     Column {
-        id: column
-        anchors.rightMargin: 10
-        anchors.leftMargin: 10
-        anchors.bottomMargin: 10
-        anchors.topMargin: 10
-        spacing: 15
+        id: mainColumn
+        anchors.margins: 15
+        spacing: 25
         anchors.fill: parent
 
 
-        Label {
-            id: text1
-            text: qsTr("Master phrase")
+        TextLineEdit {
+            id: tedMaster
+            caption: "Master phrase:"
+            placeholder: "11 symbols or more"
+            echoMode: TextInput.Password
         }
 
-        TextField {
-            id: textField
-            text: qsTr("")
-            anchors.left: parent.left
-            anchors.right: parent.right
-            placeholderText: "enter master phrase"
+        TextLineEdit {
+            id: tedConfirm
+            caption: "Confirm master phrase:"
+            echoMode: TextInput.Password
         }
 
-        Label {
-            id: text2
-            text: qsTr("Text")
+        TextLineEdit {
+            id: tedWebsite
+            caption: "Web Site:"
         }
 
-        TextField {
-            id: textField1
-            text: qsTr("Text Field")
-            anchors.left: parent.left
-            anchors.right: parent.right
+        TextLineEdit {
+            id: tedPassword
+            caption: "Password:"
         }
 
         RowLayout {
-            id: rowLayout
-            height: 100
+            id: rowButtons
+            height: btnGenerate.height
             anchors.right: parent.right
-            anchors.rightMargin: 0
             anchors.left: parent.left
-            anchors.leftMargin: 0
 
             Button {
                 id: btnGenerate
