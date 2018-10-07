@@ -54,7 +54,7 @@ Item {
     Keys.onPressed: {
         if (event.key === Qt.Key_Return)
             if (event.modifiers & Qt.ControlModifier)
-                pressedCtrlEnter()()
+                pressedCtrlEnter()
             else
                 pressedEnter()
     }

@@ -2,6 +2,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.1
 import QtQuick.Layouts 1.3
+import ru.nmeo.PasswordGenerator 1.0
 
 
 ApplicationWindow {
@@ -15,23 +16,56 @@ ApplicationWindow {
 
     Material.theme: Material.System
 
-    function isPhrasesEqual() {
-        return (tedMaster.text == tedConfirm.text)
+    ToolTip {
+        id: toolTip
+        visible: false;
+        timeout: 2000;
     }
 
-    function isPhraseEmpty() {
-        return ((tedMaster.lenght == 0) || (tedConfirm.lenght == 0))
+    PasswordGenerator {
+        id: passGen
     }
 
-    function onPressedEnter() {
-
+    function showWarning(warningString)
+    {
+        toolTip.text = warningString;
+        toolTip.visible = true;
+        console.log(warningString);
     }
 
-    function onPressedCtrlEnter() {
-
+    function checkPhrases()
+    {
+        var isPhrasesEmpty = ((tedMaster.lenght == 0) && (tedConfirm.lenght == 0))
+        if (isPhrasesEmpty) {
+            showWarning("Empty phrase is insecure");
+            return false;
+        }
+        var isPhrasesEqual = (tedMaster.text == tedConfirm.text)
+        if (!isPhrasesEqual) {
+            showWarning("Phases are not equal")
+            return false;
+        }
+        return true;
     }
 
-    function onPressedCopy() {
+    function onPressedEnter()
+    {
+        if (checkPhrases()) {
+            showWarning("Generate");
+            var password = passGen.generatePassword(tedMaster.text, tedWebsite.text);
+            tedPassword.text = password;
+        }
+    }
+
+    function onPressedCtrlEnter()
+    {
+        if (checkPhrases()) {
+            showWarning("Generate and copy");
+        }
+    }
+
+    function onPressedCopy()
+    {
 
     }
 

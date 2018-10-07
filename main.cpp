@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtQuickControls2/QQuickStyle>
+#include "PassGenWrapper.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +10,8 @@ int main(int argc, char *argv[])
   QGuiApplication app(argc, argv);
 
   QQuickStyle::setStyle("Material");
+
+  qmlRegisterType<PassGenWrapper>("ru.nmeo.PasswordGenerator", 1, 0, "PasswordGenerator");
 
   QQmlApplicationEngine engine;
   engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
