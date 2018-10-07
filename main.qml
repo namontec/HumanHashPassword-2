@@ -15,6 +15,25 @@ ApplicationWindow {
 
     Material.theme: Material.System
 
+    function isPhrasesEqual() {
+        return (tedMaster.text == tedConfirm.text)
+    }
+
+    function isPhraseEmpty() {
+        return ((tedMaster.lenght == 0) || (tedConfirm.lenght == 0))
+    }
+
+    function onPressedEnter() {
+
+    }
+
+    function onPressedCtrlEnter() {
+
+    }
+
+    function onPressedCopy() {
+
+    }
 
     Column {
         id: mainColumn
@@ -28,6 +47,7 @@ ApplicationWindow {
             caption: "Master phrase:"
             placeholder: "11 symbols or more"
             echoMode: TextInput.Password
+
         }
 
         TextLineEdit {
@@ -56,20 +76,20 @@ ApplicationWindow {
                 id: btnGenerate
                 text: qsTr("Generate")
                 Layout.fillWidth: true
-
+                onPressed: onPressedEnter()
             }
             Button {
                 id: btnCopy
                 text: qsTr("Copy")
                 Layout.fillWidth: true
-
+                onPressed: onPressedCopy()
             }
 
             Button {
                 id: btnGenCopy
                 text: qsTr("Generate and copy")
                 Layout.fillWidth: true
-
+                onPressed: onPressedCtrlEnter()
             }
 
         }

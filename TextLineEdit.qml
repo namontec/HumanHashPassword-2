@@ -7,15 +7,16 @@ Item {
     property alias echoMode: textField.echoMode
     property alias caption: textLabel.text
     property alias placeholder: textField.placeholderText
-    property alias lenght: passLength.text
+    property alias lenght: textField.length
+    property alias text: textField.text
 
     anchors.right: parent.right
     anchors.left: parent.left
 
     height: textLabel.height + textField.height
 
-    signal onEnterPressed
-    signal onCtrlEnterPressed
+    signal pressedEnter
+    signal pressedCtrlEnter
 
     Column {
         id: tedColumn
@@ -53,9 +54,9 @@ Item {
     Keys.onPressed: {
         if (event.key === Qt.Key_Return)
             if (event.modifiers & Qt.ControlModifier)
-                onEnterPressed()
+                pressedCtrlEnter()()
             else
-                onCtrlEnterPressed()
+                pressedEnter()
     }
 
 }
