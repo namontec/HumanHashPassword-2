@@ -14,6 +14,9 @@ Item {
 
     height: textLabel.height + textField.height
 
+    signal onEnterPressed
+    signal onCtrlEnterPressed
+
     Column {
         id: tedColumn
         anchors.fill: parent
@@ -47,6 +50,12 @@ Item {
 
     }
 
-
+    Keys.onPressed: {
+        if (event.key === Qt.Key_Return)
+            if (event.modifiers & Qt.ControlModifier)
+                onEnterPressed()
+            else
+                onCtrlEnterPressed()
+    }
 
 }
