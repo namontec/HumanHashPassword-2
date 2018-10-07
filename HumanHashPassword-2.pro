@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    PassGenerator.cpp
+    PassGenerator.cpp \
+    PassGenWrapper.cpp
 
 RESOURCES += qml.qrc
 
@@ -34,4 +35,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 HEADERS += \
-    PassGenerator.h
+    PassGenerator.h \
+    PassGenWrapper.h
