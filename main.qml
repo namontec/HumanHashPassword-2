@@ -11,13 +11,14 @@ ApplicationWindow {
     width: 400
     height: 480
     minimumWidth: 300
-    minimumHeight: 300
+    minimumHeight: mainColumn.height + mainColumn.anchors.margins
     title: qsTr("Human Hash Password Generator")
 
     Material.theme: Material.System
 
     ToolTip {
         id: toolTip
+        parent: activeFocusItem
         visible: false;
         timeout: 2000;
     }
@@ -29,8 +30,8 @@ ApplicationWindow {
     function showWarning(warningString)
     {
         toolTip.text = warningString;
+        toolTip.timeout = 2000;
         toolTip.visible = true;
-        console.log(warningString);
     }
 
     function checkPhrases()
@@ -48,32 +49,33 @@ ApplicationWindow {
         return true;
     }
 
-    function onPressedEnter()
+    function generate()
     {
         if (checkPhrases()) {
-            showWarning("Generate");
             var password = passGen.generatePassword(tedMaster.text, tedWebsite.text);
             tedPassword.text = password;
         }
     }
 
-    function onPressedCtrlEnter()
+    function generateCopy()
     {
         if (checkPhrases()) {
             showWarning("Generate and copy");
         }
     }
 
-    function onPressedCopy()
+    function copy()
     {
 
     }
 
     Column {
         id: mainColumn
+        anchors.right: parent.right
+        anchors.left: parent.left
+        anchors.top: parent.top
         anchors.margins: 15
         spacing: 5
-        anchors.fill: parent
 
 
         TextLineEdit {
@@ -81,6 +83,8 @@ ApplicationWindow {
             caption: "Master phrase:"
             placeholder: "11 symbols or more"
             echoMode: TextInput.Password
+            onPressedEnter: generate()
+            onPressedCtrlEnter: generateCopy()
 
         }
 
@@ -88,11 +92,15 @@ ApplicationWindow {
             id: tedConfirm
             caption: "Confirm master phrase:"
             echoMode: TextInput.Password
+            onPressedEnter: generate()
+            onPressedCtrlEnter: generateCopy()
         }
 
         TextLineEdit {
             id: tedWebsite
             caption: "Web Site:"
+            onPressedEnter: generate()
+            onPressedCtrlEnter: generateCopy()
         }
 
         TextLineEdit {
@@ -110,20 +118,20 @@ ApplicationWindow {
                 id: btnGenerate
                 text: qsTr("Generate")
                 Layout.fillWidth: true
-                onPressed: onPressedEnter()
+                onPressed: pressedEnter()
             }
             Button {
                 id: btnCopy
                 text: qsTr("Copy")
                 Layout.fillWidth: true
-                onPressed: onPressedCopy()
+                onPressed: pressedCopy()
             }
 
             Button {
                 id: btnGenCopy
                 text: qsTr("Generate and copy")
                 Layout.fillWidth: true
-                onPressed: onPressedCtrlEnter()
+                onPressed: pressedCtrlEnter()
             }
 
         }

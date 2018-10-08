@@ -15,8 +15,8 @@ Item {
 
     height: textLabel.height + textField.height
 
-    signal pressedEnter
-    signal pressedCtrlEnter
+    signal pressedEnter()
+    signal pressedCtrlEnter()
 
     Column {
         id: tedColumn
