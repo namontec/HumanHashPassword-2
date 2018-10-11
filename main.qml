@@ -12,9 +12,9 @@ ApplicationWindow {
     height: 480
     minimumWidth: 300
     minimumHeight: mainColumn.height + mainColumn.anchors.margins
-    title: qsTr("Human Hash Password Generator")
+    title: "Human Hash Password Generator"
 
-    Material.theme: Material.System
+    //Material.theme: Material.System
 
     ToolTip {
         id: toolTip
@@ -60,7 +60,9 @@ ApplicationWindow {
     function generateCopy()
     {
         if (checkPhrases()) {
-            showWarning("Generate and copy");
+            var password = passGen.generatePassword(tedMaster.text, tedWebsite.text);
+
+            tedPassword.text = "<Copied to clipboard>";
         }
     }
 
@@ -75,7 +77,7 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 15
-        spacing: 5
+        //spacing: 0
 
 
         TextLineEdit {
@@ -108,6 +110,11 @@ ApplicationWindow {
             caption: "Password:"
         }
 
+
+        ProgressTimer {
+            id: progressTimer
+        }
+
         RowLayout {
             id: rowButtons
             height: btnGenerate.height
@@ -135,6 +142,7 @@ ApplicationWindow {
             }
 
         }
+
 
 
     }
