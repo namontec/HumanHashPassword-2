@@ -10,8 +10,8 @@ ApplicationWindow {
     id: window
     visible: true
     width: 400
-    height: mainColumn.height + mainColumn.anchors.margins + 10
-    minimumWidth: 300
+    height: 100
+    minimumWidth: 250
     minimumHeight: mainColumn.height + mainColumn.anchors.margins
     title: "Human Hash Password Generator"
 
@@ -72,9 +72,12 @@ ApplicationWindow {
 
     function copy(string)
     {
-        tools.copyToClipboard(string);
-        tedPassword.text = "<Copied to clipboard>";
-        passwordTimer.pauseTimer();
+        if (string != "") {
+            tools.copyToClipboard(string);
+            tedPassword.text = "<Copied to clipboard>";
+            passwordTimer.pauseTimer();
+        }
+        else showWarning("Empty password");
     }
 
     Column {

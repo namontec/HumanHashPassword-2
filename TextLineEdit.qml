@@ -38,6 +38,7 @@ Item {
                 text: qsTr("")
                 Layout.fillHeight: false
                 Layout.fillWidth: true
+                inputMethodHints: Qt.ImhNoPredictiveText
                 onLengthChanged: {
                     passLength.text = textField.length
                     if (textField.length != 0) fieldChanged()
