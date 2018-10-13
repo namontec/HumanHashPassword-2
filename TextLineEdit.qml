@@ -40,13 +40,7 @@ Item {
                 Layout.fillWidth: true
                 onLengthChanged: {
                     passLength.text = textField.length
-                    fieldChanged()                   
-                }
-                Rectangle {
-                    color: "yellow"
-                    anchors.fill: parent
-                    opacity: 1
-                    z: -1
+                    if (textField.length != 0) fieldChanged()
                 }
             }
 

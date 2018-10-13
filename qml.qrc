@@ -3,6 +3,5 @@
         <file>main.qml</file>
         <file>TextLineEdit.qml</file>
         <file>ProgressTimer.qml</file>
-        <file>ProgressFill.qml</file>
     </qresource>
 </RCC>

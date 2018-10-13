@@ -80,6 +80,7 @@ ApplicationWindow {
         spacing: 5
 
 
+
         TextLineEdit {
             id: tedMaster
             caption: "Master phrase:"
@@ -88,7 +89,21 @@ ApplicationWindow {
             onPressedEnter: generate()
             onPressedCtrlEnter: generateCopy()
             onFieldChanged: phraseTimer.restartTimer()
+
+            ProgressTimer {
+                id: phraseTimer
+                anchors.bottom: parent.bottom
+                opacity: 0.5
+                to: 600
+                startValue: 600
+                onTimerStop: {
+                    tedMaster.text  = ""
+                    tedConfirm.text = ""
+                }
+            }
         }
+
+
 
 
         TextLineEdit {
@@ -100,6 +115,7 @@ ApplicationWindow {
             onFieldChanged: phraseTimer.restartTimer()
         }
 
+
         TextLineEdit {
             id: tedWebsite
             caption: "Web Site:"
@@ -107,15 +123,6 @@ ApplicationWindow {
             onPressedCtrlEnter: generateCopy()
         }
 
-        ProgressTimer {
-            id: phraseTimer
-            to: 60
-            startValue: 60
-            onTimerStop: {
-                tedMaster.text  = ""
-                tedConfirm.text = ""
-            }
-        }
 
 
 
@@ -123,15 +130,19 @@ ApplicationWindow {
             id: tedPassword
             caption: "Password:"
             onFieldChanged: passwordTimer.restartTimer()
+
+            ProgressTimer {
+                id: passwordTimer
+                anchors.bottom: parent.bottom
+                opacity: 0.5
+                to: 20
+                startValue: 20
+                onTimerStop: tedPassword.text = ""
+            }
         }
 
 
-        ProgressTimer {
-            id: passwordTimer
-            to: 10
-            startValue: 10
-            onTimerStop: tedPassword.text = ""
-        }
+
 
         RowLayout {
             id: rowButtons
@@ -143,20 +154,20 @@ ApplicationWindow {
                 id: btnGenerate
                 text: qsTr("Generate")
                 Layout.fillWidth: true
-                onPressed: pressedEnter()
+                onPressed: generate()
             }
             Button {
                 id: btnCopy
                 text: qsTr("Copy")
                 Layout.fillWidth: true
-                onPressed: pressedCopy()
+                onPressed: copy()
             }
 
             Button {
                 id: btnGenCopy
                 text: qsTr("Generate and copy")
                 Layout.fillWidth: true
-                onPressed: pressedCtrlEnter()
+                onPressed: generateCopy()
             }
 
         }
