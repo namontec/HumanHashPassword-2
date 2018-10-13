@@ -376,3 +376,26 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+
+#hhpass winrt project
+#winrt x86
+x86-vs-build/translations/*
+x86-vs-build/QtQuick/*
+x86-vs-build/QtQuick.2/
+x86-vs-build/QtGraphicalEffects/*
+x86-vs-build/hhpass.windeployqt.Win32.Debug
+
+#winrt x64
+x64-vs-build/translations/*
+x64-vs-build/QtQuick/*
+x64-vs-build/QtQuick.2/
+x64-vs-build/QtGraphicalEffects/*
+x64-vs-build/hhpass.windeployqt.Win32.Debug
+
+#winrt arm
+arm-vs-build/translations/*
+arm-vs-build/QtQuick/*
+arm-vs-build/QtQuick.2/
+arm-vs-build/QtGraphicalEffects/*
+arm-vs-build/hhpass.windeployqt.Win32.Debug
