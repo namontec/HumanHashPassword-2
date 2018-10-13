@@ -3,13 +3,14 @@ import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.1
 import QtQuick.Layouts 1.3
 import ru.nmeo.PasswordGenerator 1.0
+import ru.nmeo.Tools 1.0
 
 
 ApplicationWindow {
     id: window
     visible: true
     width: 400
-    height: 480
+    height: mainColumn.height + mainColumn.anchors.margins + 10
     minimumWidth: 300
     minimumHeight: mainColumn.height + mainColumn.anchors.margins
     title: "Human Hash Password Generator"
@@ -25,6 +26,10 @@ ApplicationWindow {
 
     PasswordGenerator {
         id: passGen
+    }
+
+    Tools {
+        id: tools
     }
 
     function showWarning(warningString)
@@ -61,14 +66,15 @@ ApplicationWindow {
     {
         if (checkPhrases()) {
             var password = passGen.generatePassword(tedMaster.text, tedWebsite.text);
-
-            tedPassword.text = "<Copied to clipboard>";
+            copy(password);
         }
     }
 
-    function copy()
+    function copy(string)
     {
-
+        tools.copyToClipboard(string);
+        tedPassword.text = "<Copied to clipboard>";
+        passwordTimer.pauseTimer();
     }
 
     Column {
@@ -160,7 +166,7 @@ ApplicationWindow {
                 id: btnCopy
                 text: qsTr("Copy")
                 Layout.fillWidth: true
-                onPressed: copy()
+                onPressed: copy(tedPassword.text)
             }
 
             Button {

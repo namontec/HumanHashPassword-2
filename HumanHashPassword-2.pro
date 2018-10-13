@@ -17,7 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     PassGenerator.cpp \
-    PassGenWrapper.cpp
+    PassGenWrapper.cpp \
+    tools.cpp
 
 RESOURCES += qml.qrc
 
@@ -36,4 +37,5 @@ DISTFILES +=
 
 HEADERS += \
     PassGenerator.h \
-    PassGenWrapper.h
+    PassGenWrapper.h \
+    tools.h

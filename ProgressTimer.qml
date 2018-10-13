@@ -55,4 +55,8 @@ Item {
         timerStop();
     }
 
+    function pauseTimer() {
+        timer.stop();
+    }
+
 }
