@@ -3,7 +3,11 @@ import QtQuick.Controls 2.3
 
 Item {
     property string name: "ProgressTimer"
+    property int startValue
     property alias value: progressBar.value
+    property alias interval: timer.interval
+    property alias to: progressBar.to
+
 
     signal timerStop()
 
@@ -19,8 +23,6 @@ Item {
             id: progressBar
             anchors.right: parent.right
             anchors.left: parent.left
-            from: 0; to: 60
-            value: 60
 
         }
 
@@ -39,12 +41,13 @@ Item {
     }
 
     function startTimer() {
-        progressBar.value = 100
+        progressBar.value = startValue
         timer.start()
     }
 
-    function resetTimer() {
-
+    function restartTimer() {
+        progressBar.value = startValue
+        timer.restart()
     }
 
     function stopTimer() {

@@ -14,7 +14,7 @@ ApplicationWindow {
     minimumHeight: mainColumn.height + mainColumn.anchors.margins
     title: "Human Hash Password Generator"
 
-    //Material.theme: Material.System
+    Material.theme: Material.System
 
     ToolTip {
         id: toolTip
@@ -77,7 +77,7 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 15
-        //spacing: 0
+        spacing: 5
 
 
         TextLineEdit {
@@ -87,8 +87,9 @@ ApplicationWindow {
             echoMode: TextInput.Password
             onPressedEnter: generate()
             onPressedCtrlEnter: generateCopy()
-
+            onFieldChanged: phraseTimer.restartTimer()
         }
+
 
         TextLineEdit {
             id: tedConfirm
@@ -96,6 +97,7 @@ ApplicationWindow {
             echoMode: TextInput.Password
             onPressedEnter: generate()
             onPressedCtrlEnter: generateCopy()
+            onFieldChanged: phraseTimer.restartTimer()
         }
 
         TextLineEdit {
@@ -105,14 +107,30 @@ ApplicationWindow {
             onPressedCtrlEnter: generateCopy()
         }
 
+        ProgressTimer {
+            id: phraseTimer
+            to: 60
+            startValue: 60
+            onTimerStop: {
+                tedMaster.text  = ""
+                tedConfirm.text = ""
+            }
+        }
+
+
+
         TextLineEdit {
             id: tedPassword
             caption: "Password:"
+            onFieldChanged: passwordTimer.restartTimer()
         }
 
 
         ProgressTimer {
-            id: progressTimer
+            id: passwordTimer
+            to: 10
+            startValue: 10
+            onTimerStop: tedPassword.text = ""
         }
 
         RowLayout {

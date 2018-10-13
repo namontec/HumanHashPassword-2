@@ -9,6 +9,7 @@ Item {
     property alias placeholder: textField.placeholderText
     property alias lenght: textField.length
     property alias text: textField.text
+    property int clearTimer: -1
 
     anchors.right: parent.right
     anchors.left: parent.left
@@ -17,6 +18,7 @@ Item {
 
     signal pressedEnter()
     signal pressedCtrlEnter()
+    signal fieldChanged()
 
     Column {
         id: tedColumn
@@ -38,6 +40,13 @@ Item {
                 Layout.fillWidth: true
                 onLengthChanged: {
                     passLength.text = textField.length
+                    fieldChanged()                   
+                }
+                Rectangle {
+                    color: "yellow"
+                    anchors.fill: parent
+                    opacity: 1
+                    z: -1
                 }
             }
 
