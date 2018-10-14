@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hhpass", "hhpass.vcxproj", "{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}.Debug|ARM.Build.0 = Debug|ARM
+		{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}.Debug|ARM.Deploy.0 = Debug|ARM
+		{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}.Release|ARM.ActiveCfg = Release|ARM
+		{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}.Release|ARM.Build.0 = Release|ARM
+		{5FC43964-6C9B-392E-ADF0-D8581DFA84B4}.Release|ARM.Deploy.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24FE8CB4-4B05-4ED4-BE52-2E0BB62E9614}
+	EndGlobalSection
+EndGlobal

@@ -23,7 +23,7 @@
     <WindowsTargetPlatformMinVersion>10.0.17134.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <OutputDirectory>release\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
@@ -33,7 +33,7 @@
     <PrimaryOutput>hhpass</PrimaryOutput>
     <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
-  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <OutputDirectory>debug\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
@@ -45,27 +45,35 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
-  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
-  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">release\</OutDir>
-    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">release\</IntDir>
-    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">hhpass</TargetName>
-    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">true</IgnoreImportLibrary>
-    <LinkIncremental Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">false</LinkIncremental>
-    <GenerateManifest Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">false</GenerateManifest>
-    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">debug\</OutDir>
-    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">debug\</IntDir>
-    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">hhpass</TargetName>
-    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">true</IgnoreImportLibrary>
-    <GenerateManifest Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">hhpass</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">hhpass</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</IgnoreImportLibrary>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">false</GenerateManifest>
+    <PackageCertificateThumbprint>3B705C3E67D97BF5FF7F145CEEA2D1CE6551C61E</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>hhpass_StoreKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\HumanHashPassword-2;.;C:\Qt\5.11.2\winrt_armv7_msvc2017\include;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtQuickControls2;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtQuick;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtGui;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtANGLE;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtQml;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtNetwork;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtCore;release;C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\winrt-arm-msvc2017;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
@@ -80,7 +88,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;Q_BYTE_ORDER=Q_LITTLE_ENDIAN;WINAPI_FAMILY=WINAPI_FAMILY_PC_APP;WINAPI_PARTITION_PHONE_APP=1;ARM;__ARM__;__arm__;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_QUICKCONTROLS2_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -111,11 +120,11 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;Q_BYTE_ORDER=Q_LITTLE_ENDIAN;WINAPI_FAMILY=WINAPI_FAMILY_PC_APP;WINAPI_PARTITION_PHONE_APP=1;ARM;__ARM__;__arm__;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_QUICKCONTROLS2_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
-  <Target Name="WinDeployQt_Release|ARM" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;" Inputs="$(OutDir)\$(TargetName).exe" Outputs="$(TargetName).windeployqt.$(Platform).$(Configuration)">
-    <Message Text="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; > &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
-    <Exec Command="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; > &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
+  <Target Name="WinDeployQt_Release|ARM" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Inputs="$(OutDir)\$(TargetName).exe" Outputs="$(TargetName).windeployqt.$(Platform).$(Configuration)">
+    <Message Text="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; &gt; &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
+    <Exec Command="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; &gt; &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
   </Target>
-  <Target Name="PopulateWinDeployQtItems_Release|ARM" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;" AfterTargets="Link" DependsOnTargets="WinDeployQt_Release|ARM">
+  <Target Name="PopulateWinDeployQtItems_Release|ARM" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" AfterTargets="Link" DependsOnTargets="WinDeployQt_Release|ARM">
     <ReadLinesFromFile File="$(TargetName).windeployqt.$(Platform).$(Configuration)">
       <Output TaskParameter="Lines" ItemName="DeploymentItems" />
     </ReadLinesFromFile>
@@ -125,7 +134,7 @@
       </None>
     </ItemGroup>
   </Target>
-  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\HumanHashPassword-2;.;C:\Qt\5.11.2\winrt_armv7_msvc2017\include;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtQuickControls2;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtQuick;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtGui;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtANGLE;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtQml;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtNetwork;C:\Qt\5.11.2\winrt_armv7_msvc2017\include\QtCore;debug;C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\winrt-arm-msvc2017;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
@@ -169,11 +178,11 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_LARGEFILE_SUPPORT;Q_BYTE_ORDER=Q_LITTLE_ENDIAN;WINAPI_FAMILY=WINAPI_FAMILY_PC_APP;WINAPI_PARTITION_PHONE_APP=1;ARM;__ARM__;__arm__;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_DEPRECATED_WARNINGS;QT_QUICKCONTROLS2_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
-  <Target Name="WinDeployQt_Debug|ARM" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;" Inputs="$(OutDir)\$(TargetName).exe" Outputs="$(TargetName).windeployqt.$(Platform).$(Configuration)">
-    <Message Text="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; > &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
-    <Exec Command="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; > &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
+  <Target Name="WinDeployQt_Debug|ARM" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Inputs="$(OutDir)\$(TargetName).exe" Outputs="$(TargetName).windeployqt.$(Platform).$(Configuration)">
+    <Message Text="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; &gt; &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
+    <Exec Command="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\windeployqt.exe -qmldir C:\namontec\app\hhpass2\HumanHashPassword-2 -list relative -dir &quot;$(MSBuildProjectDirectory)&quot; &quot;$(OutDir)\$(TargetName).exe&quot; &gt; &quot;$(TargetName).windeployqt.$(Platform).$(Configuration)&quot;" />
   </Target>
-  <Target Name="PopulateWinDeployQtItems_Debug|ARM" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;" AfterTargets="Link" DependsOnTargets="WinDeployQt_Debug|ARM">
+  <Target Name="PopulateWinDeployQtItems_Debug|ARM" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" AfterTargets="Link" DependsOnTargets="WinDeployQt_Debug|ARM">
     <ReadLinesFromFile File="$(TargetName).windeployqt.$(Platform).$(Configuration)">
       <Output TaskParameter="Lines" ItemName="DeploymentItems" />
     </ReadLinesFromFile>
@@ -191,61 +200,61 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\PassGenWrapper.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">..\PassGenWrapper.h;release\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/release/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt&quot; ..\PassGenWrapper.h -o release\moc_PassGenWrapper.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">MOC ../PassGenWrapper.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">release\moc_PassGenWrapper.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">..\PassGenWrapper.h;debug\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/debug/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt&quot; ..\PassGenWrapper.h -o debug\moc_PassGenWrapper.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">MOC ../PassGenWrapper.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">debug\moc_PassGenWrapper.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">..\PassGenWrapper.h;release\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/release/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\PassGenWrapper.h -o release\moc_PassGenWrapper.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">MOC ../PassGenWrapper.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">release\moc_PassGenWrapper.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">..\PassGenWrapper.h;debug\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/debug/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\PassGenWrapper.h -o debug\moc_PassGenWrapper.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">MOC ../PassGenWrapper.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">debug\moc_PassGenWrapper.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <ClInclude Include="..\PassGenerator.h" />
     <CustomBuild Include="..\tools.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">..\tools.h;release\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/release/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt&quot; ..\tools.h -o release\moc_tools.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">MOC ../tools.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">release\moc_tools.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">..\tools.h;debug\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/debug/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt&quot; ..\tools.h -o debug\moc_tools.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">MOC ../tools.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">debug\moc_tools.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">..\tools.h;release\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/release/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\tools.h -o release\moc_tools.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">MOC ../tools.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">release\moc_tools.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">..\tools.h;debug\moc_predefs.h;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQ_BYTE_ORDER=Q_LITTLE_ENDIAN -DWINAPI_FAMILY=WINAPI_FAMILY_PC_APP -DWINAPI_PARTITION_PHONE_APP=1 -DARM -D__ARM__ -D__arm__ -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DQT_DEPRECATED_WARNINGS -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include C:/namontec/app/hhpass2/HumanHashPassword-2/arm-vs-build/debug/moc_predefs.h -IC:/Qt/5.11.2/winrt_armv7_msvc2017/mkspecs/winrt-arm-msvc2017 -IC:/namontec/app/hhpass2/HumanHashPassword-2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuickControls2 -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQuick -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtGui -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtANGLE -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtQml -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtNetwork -IC:/Qt/5.11.2/winrt_armv7_msvc2017/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt" ..\tools.h -o debug\moc_tools.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">MOC ../tools.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">debug\moc_tools.cpp;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="debug\moc_PassGenWrapper.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="release\moc_PassGenWrapper.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
     </ClCompile>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
       <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">true</ExcludedFromBuild>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">cl -Bxc:\Qt\5.11.2\winrt_armv7_msvc2017\bin\qmake.exe -nologo -FS -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -Zi -MDd -GR -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp 2>NUL >debug\moc_predefs.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">Generate moc_predefs.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">debug\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">cl -Bxc:\Qt\5.11.2\winrt_armv7_msvc2017\bin\qmake.exe -nologo -FS -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -Zi -MDd -GR -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;debug\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">debug\moc_predefs.h;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">cl -Bxc:\Qt\5.11.2\winrt_armv7_msvc2017\bin\qmake.exe -nologo -FS -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -GR -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp 2>NUL >release\moc_predefs.h</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">Generate moc_predefs.h</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">release\moc_predefs.h;%(Outputs)</Outputs>
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">cl -Bxc:\Qt\5.11.2\winrt_armv7_msvc2017\bin\qmake.exe -nologo -FS -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -O2 -MD -GR -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\Qt\5.11.2\winrt_armv7_msvc2017\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;release\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">release\moc_predefs.h;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
     </CustomBuild>
     <ClCompile Include="debug\moc_tools.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="release\moc_tools.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="debug\qrc_qml.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="release\qrc_qml.cpp">
-      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -254,15 +263,16 @@
     <None Include="..\main.qml" />
     <CustomBuild Include="..\qml.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">..\qml.qrc;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe;..\TextLineEdit.qml;..\ProgressTimer.qml;..\main.qml;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe -name qml ..\qml.qrc -o release\qrc_qml.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">RCC ../qml.qrc</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|ARM&apos;">release\qrc_qml.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">..\qml.qrc;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe;..\TextLineEdit.qml;..\ProgressTimer.qml;..\main.qml;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe -name qml ..\qml.qrc -o debug\qrc_qml.cpp</Command>
-      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">RCC ../qml.qrc</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|ARM&apos;">debug\qrc_qml.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">..\qml.qrc;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe;..\TextLineEdit.qml;..\ProgressTimer.qml;..\main.qml;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe -name qml ..\qml.qrc -o release\qrc_qml.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">RCC ../qml.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">release\qrc_qml.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">..\qml.qrc;C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe;..\TextLineEdit.qml;..\ProgressTimer.qml;..\main.qml;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\rcc.exe -name qml ..\qml.qrc -o debug\qrc_qml.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">RCC ../qml.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">debug\qrc_qml.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="hhpass_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Qt\5.11.2\winrt_armv7_msvc2017\bin\Qt5Core.dll" />
@@ -292,11 +302,16 @@
     <None Include="android\res\values\libs.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest" />
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
     <Image Include="assets/logo_150x150.png" />
     <Image Include="assets/logo_44x44.png" />
     <Image Include="assets/logo_store.png" />
     <Image Include="assets/logo_620x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

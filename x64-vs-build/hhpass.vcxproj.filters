@@ -120,6 +120,8 @@
     <CustomBuild Include="..\qml.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="hhpass_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Qt\5.11.2\winrt_x64_msvc2017\bin\Qt5Core.dll">
@@ -193,5 +195,14 @@
     <None Include="android\res\values\libs.xml">
       <Filter>Distribution Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets/logo_150x150.png" />
+    <Image Include="assets/logo_44x44.png" />
+    <Image Include="assets/logo_store.png" />
+    <Image Include="assets/logo_620x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:mobile="http://schemas.microsoft.com/appx/manifest/mobile/windows10" IgnorableNamespaces="uap uap3 mp mobile">
-  <Identity Name="nmeo-hhpass-0b1b18c1-a041-401c-b67f-8f341c102ab1" Publisher="CN=Victor" Version="1.2.0.0" ProcessorArchitecture="x86" />
-  <mp:PhoneIdentity PhoneProductId="0b1b18c1-a041-401c-b67f-8f341c102ab1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="34445namontec.56195CCDA73F2" Publisher="CN=7F93E279-6BBD-4B2C-8C84-542A0998B0B4" Version="1.2.0.0" ProcessorArchitecture="x86" />
+  <mp:PhoneIdentity PhoneProductId="1719801d-da5c-4667-b5ba-221cff19f266" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>hhpass</DisplayName>
+    <DisplayName>HumanHash Password</DisplayName>
     <PublisherDisplayName>namontec</PublisherDisplayName>
     <Logo>assets/logo_store.png</Logo>
   </Properties>

@@ -399,3 +399,6 @@ arm-vs-build/QtQuick/*
 arm-vs-build/QtQuick.2/
 arm-vs-build/QtGraphicalEffects/*
 arm-vs-build/hhpass.windeployqt.Win32.Debug
+
+#Windows store sertificate
+*.pfx

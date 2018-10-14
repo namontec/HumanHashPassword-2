@@ -1,56 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<Package
-  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:mobile="http://schemas.microsoft.com/appx/manifest/mobile/windows10"
-  IgnorableNamespaces="uap uap3 mp mobile">
-
-  <Identity
-    Name="ebda0f45-e7c8-465e-a104-ddf8a9c34c58"
-    Publisher="CN=Victor"
-    Version="1.0.0.0"
-    ProcessorArchitecture="arm" />
-
-  <mp:PhoneIdentity PhoneProductId="ebda0f45-e7c8-465e-a104-ddf8a9c34c58" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:mobile="http://schemas.microsoft.com/appx/manifest/mobile/windows10" IgnorableNamespaces="uap uap3 mp mobile">
+  <Identity Name="34445namontec.56195CCDA73F2" Publisher="CN=7F93E279-6BBD-4B2C-8C84-542A0998B0B4" Version="1.2.50.0" ProcessorArchitecture="arm" />
+  <mp:PhoneIdentity PhoneProductId="1303b108-6eec-496d-9ead-cef88ae34e5b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>hhpass</DisplayName>
-    <PublisherDisplayName>Default publisher display name</PublisherDisplayName>
+    <DisplayName>HumanHash Password</DisplayName>
+    <PublisherDisplayName>namontec</PublisherDisplayName>
     <Logo>assets/logo_store.png</Logo>
   </Properties>
-
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal"
-      MinVersion="10.0.17134.0"
-      MaxVersionTested="10.0.17134.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17134.0" MaxVersionTested="10.0.17134.0" />
   </Dependencies>
-
   <Resources>
-    <Resource Language="en"/>
+    <Resource Language="en" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-      Executable="hhpass.exe"
-      EntryPoint="hhpass.App">
-      <uap:VisualElements
-        DisplayName="hhpass"
-        Description="Default package description"
-        BackgroundColor="green"
-        Square150x150Logo="assets/logo_150x150.png"
-        Square44x44Logo="assets/logo_44x44.png">
-
+    <Application Id="App" Executable="hhpass.exe" EntryPoint="hhpass.App">
+      <uap:VisualElements DisplayName="HumanHash Password" Description="Application for generating human readable passwords" BackgroundColor="#CE291F" Square150x150Logo="assets/logo_150x150.png" Square44x44Logo="assets/logo_44x44.png">
         <uap:SplashScreen Image="assets/logo_620x300.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
-  
-  <Capabilities>
-    <Capability Name="internetClient" />
-    <Capability Name="internetClientServer" />
-    <Capability Name="privateNetworkClientServer" />
-  </Capabilities>
 </Package>

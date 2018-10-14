@@ -120,6 +120,8 @@
     <CustomBuild Include="..\qml.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="hhpass_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Qt\5.11.2\winrt_x86_msvc2017\bin\Qt5Core.dll">

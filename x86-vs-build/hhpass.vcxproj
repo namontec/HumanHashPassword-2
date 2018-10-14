@@ -64,6 +64,14 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hhpass</TargetName>
     <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
+    <PackageCertificateThumbprint>BA0C39F1BBD94139D1EACF200FD4338D10E0FA8F</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>hhpass_StoreKey.pfx</PackageCertificateKeyFile>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86</AppxBundlePlatforms>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -268,6 +276,7 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCC ../qml.qrc</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\qrc_qml.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="hhpass_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Qt\5.11.2\winrt_x86_msvc2017\bin\Qt5Core.dll" />
@@ -304,6 +313,9 @@
     <Image Include="assets/logo_44x44.png" />
     <Image Include="assets/logo_store.png" />
     <Image Include="assets/logo_620x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
