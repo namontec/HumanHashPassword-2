@@ -57,27 +57,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\HumanHashPassword-2\PassGenWrapper.cpp">
+    <ClCompile Include="..\PassGenWrapper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\HumanHashPassword-2\PassGenerator.cpp">
+    <ClCompile Include="..\PassGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\HumanHashPassword-2\main.cpp">
+    <ClCompile Include="..\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\HumanHashPassword-2\tools.cpp">
+    <ClCompile Include="..\tools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\HumanHashPassword-2\PassGenWrapper.h">
+    <CustomBuild Include="..\PassGenWrapper.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <ClInclude Include="..\HumanHashPassword-2\PassGenerator.h">
+    <ClInclude Include="..\PassGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <CustomBuild Include="..\HumanHashPassword-2\tools.h">
+    <CustomBuild Include="..\tools.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -108,16 +108,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\HumanHashPassword-2\ProgressTimer.qml">
+    <None Include="..\ProgressTimer.qml">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\HumanHashPassword-2\TextLineEdit.qml">
+    <None Include="..\TextLineEdit.qml">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\HumanHashPassword-2\main.qml">
+    <None Include="..\main.qml">
       <Filter>Resource Files</Filter>
     </None>
-    <CustomBuild Include="..\HumanHashPassword-2\qml.qrc">
+    <CustomBuild Include="..\qml.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -193,5 +193,14 @@
     <None Include="android\res\values\libs.xml">
       <Filter>Distribution Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets/logo_150x150.png" />
+    <Image Include="assets/logo_44x44.png" />
+    <Image Include="assets/logo_store.png" />
+    <Image Include="assets/logo_620x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
 </Project>
