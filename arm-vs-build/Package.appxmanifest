@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:mobile="http://schemas.microsoft.com/appx/manifest/mobile/windows10" IgnorableNamespaces="uap uap3 mp mobile">
-  <Identity Name="34445namontec.56195CCDA73F2" Publisher="CN=7F93E279-6BBD-4B2C-8C84-542A0998B0B4" Version="1.2.50.0" ProcessorArchitecture="arm" />
+  <Identity Name="34445namontec.56195CCDA73F2" Publisher="CN=7F93E279-6BBD-4B2C-8C84-542A0998B0B4" Version="1.2.51.0" ProcessorArchitecture="arm" />
   <mp:PhoneIdentity PhoneProductId="1303b108-6eec-496d-9ead-cef88ae34e5b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>HumanHash Password</DisplayName>
