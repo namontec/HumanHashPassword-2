@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
   qmlRegisterType<PassGenWrapper>("ru.nmeo.PasswordGenerator", 1, 0, "PasswordGenerator");
   qmlRegisterType<Tools>("ru.nmeo.Tools", 1, 0, "Tools");
 
+
   QQmlApplicationEngine engine;
   engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
   if (engine.rootObjects().isEmpty())

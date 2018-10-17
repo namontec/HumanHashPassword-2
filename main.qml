@@ -14,7 +14,6 @@ ApplicationWindow {
     minimumWidth: 250
     minimumHeight: mainColumn.height + mainColumn.anchors.margins
     title: "Human Hash Password Generator"
-
     Material.theme: Material.System
 
     ToolTip {
@@ -72,7 +71,7 @@ ApplicationWindow {
 
     function copy(string)
     {
-        if (string != "") {
+        if (string !== "") {
             tools.copyToClipboard(string);
             tedPassword.text = "<Copied to clipboard>";
             passwordTimer.pauseTimer();
@@ -87,8 +86,6 @@ ApplicationWindow {
         anchors.top: parent.top
         anchors.margins: 15
         spacing: 5
-
-
 
         TextLineEdit {
             id: tedMaster
