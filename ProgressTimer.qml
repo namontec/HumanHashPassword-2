@@ -1,44 +1,39 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.3
+import QtQuick.Layouts 1.3
 
-Item {
+ColumnLayout {
+    id: column
     property string name: "ProgressTimer"
     property int startValue
     property alias value: progressBar.value
     property alias interval: timer.interval
     property alias to: progressBar.to
 
-
     signal timerStop()
 
-    anchors.right: parent.right
-    anchors.left: parent.left
-    height: progressBar.height
+    Layout.fillWidth: true
 
-    Column{
-        id: column
-        anchors.fill: parent
 
-        ProgressBar {
-            id: progressBar
-            anchors.right: parent.right
-            anchors.left: parent.left
 
-        }
+    ProgressBar {
+        id: progressBar
+        Layout.fillWidth: true
+    }
 
-        Timer {
-            id: timer
-            interval: 1000
-            running: true
-            repeat: true
-            onTriggered: {
-                progressBar.value = progressBar.value - 1;
-                if (progressBar.value <= 0) {
-                    stopTimer()
-                }
+    Timer {
+        id: timer
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: {
+            progressBar.value = progressBar.value - 1;
+            if (progressBar.value <= 0) {
+                stopTimer()
             }
         }
     }
+
 
     function startTimer() {
         progressBar.value = startValue

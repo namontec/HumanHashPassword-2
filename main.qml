@@ -10,7 +10,7 @@ ApplicationWindow {
     id: window
     visible: true
     width: 400
-    height: 100
+    //height: 100
     minimumWidth: 250
     minimumHeight: mainColumn.height + mainColumn.anchors.margins
     title: "Human Hash Password Generator"
@@ -79,13 +79,16 @@ ApplicationWindow {
         else showWarning("Empty password");
     }
 
-    Column {
+    ColumnLayout {
         id: mainColumn
-        anchors.right: parent.right
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.margins: 15
+        //anchors.right: parent.right
+        //anchors.left: parent.left
+        //anchors.top: parent.top
+        Layout.fillWidth: true
+        Layout.margins: 15
+        //anchors.margins: 15
         spacing: 5
+
 
         TextLineEdit {
             id: tedMaster
@@ -98,7 +101,8 @@ ApplicationWindow {
 
             ProgressTimer {
                 id: phraseTimer
-                anchors.bottom: parent.bottom
+                //anchors.bottom: parent.bottom
+                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
                 opacity: 0.5
                 to: 600
                 startValue: 600
@@ -152,9 +156,8 @@ ApplicationWindow {
 
         RowLayout {
             id: rowButtons
-            height: btnGenerate.height
-            anchors.right: parent.right
-            anchors.left: parent.left
+            //height: btnGenerate.height
+            Layout.fillWidth: true
 
             Button {
                 id: btnGenerate
