@@ -15,13 +15,9 @@ ApplicationWindow {
     minimumWidth:  rowButtons.implicitWidth
     minimumHeight: mainColumn.implicitHeight + mainColumn.anchors.margins
 
-
-
     title: "Human Hash Password Generator"
     Material.theme: Material.System
     //Universal.theme: Universal.System
-
-
 
     ColumnLayout {
         id: mainColumn
@@ -98,7 +94,6 @@ ApplicationWindow {
                 text: qsTr("Generate")
                 Layout.fillWidth: true
                 onPressed: generate()
-                width: maximumWidth
             }
             Button {
                 id: btnCopy
