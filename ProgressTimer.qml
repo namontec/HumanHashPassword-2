@@ -12,9 +12,6 @@ ColumnLayout {
 
     signal timerStop()
 
-    Layout.fillWidth: true
-
-
 
     ProgressBar {
         id: progressBar

@@ -12,21 +12,9 @@ ColumnLayout {
     property alias text: textField.text
     property int clearTimer: -1
 
-    //anchors.right: parent.right
-    //anchors.left: parent.left
-    Layout.fillWidth: true
-
-    Layout.preferredHeight: textLabel.height + textField.height
-    //height: textLabel.height + textField.height
-
     signal pressedEnter()
     signal pressedCtrlEnter()
     signal fieldChanged()
-
-
-    //anchors.fill: parent
-    //Layout.fillWidth: true
-
 
     Label {
         id: textLabel
@@ -34,14 +22,11 @@ ColumnLayout {
     }
 
     RowLayout {
-        //anchors.left: parent.left
-        //anchors.right: parent.right
         Layout.fillWidth: true
 
         TextField {
             id: textField
             text: qsTr("")
-            Layout.fillHeight: false
             Layout.fillWidth: true
             inputMethodHints: Qt.ImhNoPredictiveText
             onLengthChanged: {
@@ -53,12 +38,8 @@ ColumnLayout {
         Label {
             id: passLength
             text: "0"
-
         }
-
     }
-
-
 
     Keys.onPressed: {
         if (event.key === Qt.Key_Return)

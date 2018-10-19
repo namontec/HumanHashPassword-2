@@ -1,6 +1,8 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.3
-import QtQuick.Controls.Material 2.1
+import QtQuick.Controls.Material 2.4
+import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls.Universal 2.3
 import QtQuick.Layouts 1.3
 import ru.nmeo.PasswordGenerator 1.0
 import ru.nmeo.Tools 1.0
@@ -9,12 +11,116 @@ import ru.nmeo.Tools 1.0
 ApplicationWindow {
     id: window
     visible: true
-    width: 400
-    //height: 100
-    minimumWidth: 250
-    minimumHeight: mainColumn.height + mainColumn.anchors.margins
+
+    minimumWidth:  rowButtons.implicitWidth
+    minimumHeight: mainColumn.implicitHeight + mainColumn.anchors.margins
+
+
+
     title: "Human Hash Password Generator"
     Material.theme: Material.System
+    //Universal.theme: Universal.System
+
+
+
+    ColumnLayout {
+        id: mainColumn
+        anchors.fill: parent
+        anchors.margins: 15
+        spacing: 5
+
+        ColumnLayout {
+            spacing: 0
+
+            TextLineEdit {
+                id: tedMaster
+                antialiasing: false
+                caption: "Master phrase:"
+                placeholder: "11 symbols or more"
+                echoMode: TextInput.Password
+                onPressedEnter: generate()
+                onPressedCtrlEnter: generateCopy()
+                onFieldChanged: phraseTimer.restartTimer()
+            }
+
+            ProgressTimer {
+                id: phraseTimer
+                opacity: 0.5
+                to: 600
+                startValue: 600
+                onTimerStop: {
+                    tedMaster.text  = ""
+                    tedConfirm.text = ""
+                }
+            }
+        }
+
+        TextLineEdit {
+            id: tedConfirm
+            caption: "Confirm phrase:"
+            echoMode: TextInput.Password
+            onPressedEnter: generate()
+            onPressedCtrlEnter: generateCopy()
+            onFieldChanged: phraseTimer.restartTimer()
+        }
+
+        TextLineEdit {
+            id: tedWebsite
+            caption: "Web Site:"
+            onPressedEnter: generate()
+            onPressedCtrlEnter: generateCopy()
+        }
+
+        ColumnLayout {
+            spacing: 0
+
+            TextLineEdit {
+                id: tedPassword
+                caption: "Password:"
+                onFieldChanged: passwordTimer.restartTimer()
+            }
+
+            ProgressTimer {
+                id: passwordTimer
+                opacity: 0.5
+                to: 20
+                startValue: 20
+                onTimerStop: tedPassword.text = ""
+            }
+        }
+
+        RowLayout {
+            id: rowButtons
+            Layout.fillWidth: true
+
+            Button {
+                id: btnGenerate
+                text: qsTr("Generate")
+                Layout.fillWidth: true
+                onPressed: generate()
+                width: maximumWidth
+            }
+            Button {
+                id: btnCopy
+                text: qsTr("Copy")
+                Layout.fillWidth: true
+                onPressed: copy(tedPassword.text)
+            }
+            Button {
+                id: btnGenCopy
+                text: qsTr("Generate and copy")
+                Layout.fillWidth: true
+                onPressed: generateCopy()
+            }
+        }
+
+        Item {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
+    }
+
+
 
     ToolTip {
         id: toolTip
@@ -79,109 +185,4 @@ ApplicationWindow {
         else showWarning("Empty password");
     }
 
-    ColumnLayout {
-        id: mainColumn
-        //anchors.right: parent.right
-        //anchors.left: parent.left
-        //anchors.top: parent.top
-        Layout.fillWidth: true
-        Layout.margins: 15
-        //anchors.margins: 15
-        spacing: 5
-
-
-        TextLineEdit {
-            id: tedMaster
-            caption: "Master phrase:"
-            placeholder: "11 symbols or more"
-            echoMode: TextInput.Password
-            onPressedEnter: generate()
-            onPressedCtrlEnter: generateCopy()
-            onFieldChanged: phraseTimer.restartTimer()
-
-            ProgressTimer {
-                id: phraseTimer
-                //anchors.bottom: parent.bottom
-                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                opacity: 0.5
-                to: 600
-                startValue: 600
-                onTimerStop: {
-                    tedMaster.text  = ""
-                    tedConfirm.text = ""
-                }
-            }
-        }
-
-
-
-
-        TextLineEdit {
-            id: tedConfirm
-            caption: "Confirm master phrase:"
-            echoMode: TextInput.Password
-            onPressedEnter: generate()
-            onPressedCtrlEnter: generateCopy()
-            onFieldChanged: phraseTimer.restartTimer()
-        }
-
-
-        TextLineEdit {
-            id: tedWebsite
-            caption: "Web Site:"
-            onPressedEnter: generate()
-            onPressedCtrlEnter: generateCopy()
-        }
-
-
-
-
-        TextLineEdit {
-            id: tedPassword
-            caption: "Password:"
-            onFieldChanged: passwordTimer.restartTimer()
-
-            ProgressTimer {
-                id: passwordTimer
-                anchors.bottom: parent.bottom
-                opacity: 0.5
-                to: 20
-                startValue: 20
-                onTimerStop: tedPassword.text = ""
-            }
-        }
-
-
-
-
-        RowLayout {
-            id: rowButtons
-            //height: btnGenerate.height
-            Layout.fillWidth: true
-
-            Button {
-                id: btnGenerate
-                text: qsTr("Generate")
-                Layout.fillWidth: true
-                onPressed: generate()
-            }
-            Button {
-                id: btnCopy
-                text: qsTr("Copy")
-                Layout.fillWidth: true
-                onPressed: copy(tedPassword.text)
-            }
-
-            Button {
-                id: btnGenCopy
-                text: qsTr("Generate and copy")
-                Layout.fillWidth: true
-                onPressed: generateCopy()
-            }
-
-        }
-
-
-
-    }
 }
