@@ -1,12 +1,10 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.3
-import QtQuick.Controls.Material 2.4
-import QtQuick.Controls.Styles 1.4
-import QtQuick.Controls.Universal 2.3
 import QtQuick.Layouts 1.3
-import ru.nmeo.PasswordGenerator 1.0
+
 import ru.nmeo.Tools 1.0
 
+import Qt.labs.platform 1.0
 
 ApplicationWindow {
     id: window
@@ -16,11 +14,22 @@ ApplicationWindow {
     minimumHeight: mainColumn.implicitHeight + mainColumn.anchors.margins
 
     title: "Human Hash Password Generator"
-    Material.theme: Material.System
+    //Material.theme: Material.System
     //Universal.theme: Universal.System
+
+
+    ToolTip {
+        id: toolTip
+        parent: activeFocusItem
+        visible: false;
+        timeout: 2000;
+    }
+
 
     ColumnLayout {
         id: mainColumn
+        x: 15
+        y: 15
         anchors.fill: parent
         anchors.margins: 15
         spacing: 5
@@ -116,21 +125,10 @@ ApplicationWindow {
     }
 
 
-
-    ToolTip {
-        id: toolTip
-        parent: activeFocusItem
-        visible: false;
-        timeout: 2000;
-    }
-
-    PasswordGenerator {
-        id: passGen
-    }
-
     Tools {
         id: tools
     }
+
 
     function showWarning(warningString)
     {
@@ -181,3 +179,8 @@ ApplicationWindow {
     }
 
 }
+
+/*##^## Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+ ##^##*/

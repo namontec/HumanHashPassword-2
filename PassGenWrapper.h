@@ -9,7 +9,9 @@ class PassGenWrapper : public QObject
 
 public:
   explicit PassGenWrapper(QObject *parent = nullptr);
-  Q_INVOKABLE QString generatePassword(const QString &masterPhrase, const QString &webSiteName);
+
+public slots:
+  QString generatePassword(const QString &masterPhrase, const QString &webSiteName);
 
 private:
   PassGenerator passGen_;
